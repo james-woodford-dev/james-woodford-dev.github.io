@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J. Woodford — Blog: thoughts on research, academia, and life as a Ph.D. student.">
+  <meta name="base-url" content="/">
+  <title>Blog — J. Woodford</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a class="nav-brand" href="/">J. Woodford</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/news.html">News</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/hobbies.html">Hobbies</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+  <div class="container">
+    <h1 style="color:#fff;margin-bottom:.5rem;">
+      <i class="fas fa-pen-nib" style="margin-right:.6rem;opacity:.8"></i>Blog
+    </h1>
+    <p style="color:rgba(255,255,255,.75);max-width:620px;">
+      Thoughts on research, academia, tools I find useful, and occasional musings on life as 
+      a Ph.D. student.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Category Filter -->
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;align-items:center;">
+      <span style="font-size:.9rem;color:var(--text-muted);margin-right:.25rem;">Filter:</span>
+      <button class="btn btn-sm btn-primary" onclick="filterPosts('all', this)">All</button>
+      <button class="btn btn-sm btn-outline" onclick="filterPosts('research', this)">Research</button>
+      <button class="btn btn-sm btn-outline" onclick="filterPosts('phd-life', this)">PhD Life</button>
+      <button class="btn btn-sm btn-outline" onclick="filterPosts('tools', this)">Tools &amp; Tips</button>
+      <button class="btn btn-sm btn-outline" onclick="filterPosts('opinion', this)">Opinion</button>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+
+      <article class="blog-card" data-category="phd-life">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-category">PhD Life</span>
+            <span>March 12, 2026</span>
+            <span>5 min read</span>
+          </div>
+          <div class="blog-card-title">
+            <a href="/blog/posts/2026-03-12-hello-world.html">Hello World: Starting My Research Journey</a>
+          </div>
+          <div class="blog-card-excerpt">
+            An introduction to who I am, what I'm working on, and why I decided to start a 
+            personal website. Also: what to expect from this blog going forward.
+          </div>
+          <a href="/blog/posts/2026-03-12-hello-world.html" class="btn btn-sm btn-outline">
+            Read More <i class="fas fa-arrow-right" style="font-size:.75rem;"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Placeholder cards (replace with real posts as you write them) -->
+      <article class="blog-card" data-category="tools" style="opacity:.55;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-category">Tools &amp; Tips</span>
+            <span>Coming soon</span>
+          </div>
+          <div class="blog-card-title">My Research Workflow: Papers, Notes, and Code</div>
+          <div class="blog-card-excerpt">
+            How I manage reading papers, taking notes, and keeping code organized as a 
+            first-year Ph.D. student.
+          </div>
+          <span class="btn btn-sm btn-outline" style="pointer-events:none;opacity:.5;">Coming Soon</span>
+        </div>
+      </article>
+
+      <article class="blog-card" data-category="research" style="opacity:.55;">
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span class="blog-category">Research</span>
+            <span>Coming soon</span>
+          </div>
+          <div class="blog-card-title">What I Learned from My First Rejected Paper</div>
+          <div class="blog-card-excerpt">
+            A reflection on the peer review process, how to handle rejection, and what to 
+            do with reviewer feedback.
+          </div>
+          <span class="btn btn-sm btn-outline" style="pointer-events:none;opacity:.5;">Coming Soon</span>
+        </div>
+      </article>
+
+    </div><!-- end blog-grid -->
+
+    <div style="margin-top:2.5rem;text-align:center;">
+      <p style="font-size:.9rem;color:var(--text-muted);">
+        To add a new blog post, create an HTML file in <code>/blog/posts/</code> using the 
+        existing post as a template, and add a card above.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">J. Woodford</span>
+      <ul class="footer-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://github.com/jwoodfor" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:your.email@university.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="/assets/js/main.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function filterPosts(cat, btn) {
+    document.querySelectorAll('[onclick^="filterPosts"]').forEach(b => b.className = 'btn btn-sm btn-outline');
+    btn.className = 'btn btn-sm btn-primary';
+    document.querySelectorAll('#blog-grid article').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

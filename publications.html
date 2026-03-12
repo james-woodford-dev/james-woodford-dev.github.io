@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J. Woodford — Publications, citation metrics, and research output pulled from Google Scholar.">
+  <meta name="base-url" content="/">
+  <title>Publications — J. Woodford</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a class="nav-brand" href="/">J. Woodford</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/news.html">News</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/hobbies.html">Hobbies</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+  <div class="container">
+    <h1 style="color:#fff;margin-bottom:.5rem;">
+      <i class="fas fa-scroll" style="margin-right:.6rem;opacity:.8"></i>Publications
+    </h1>
+    <p style="color:rgba(255,255,255,.75);max-width:620px;">
+      My full publication record, automatically synced with 
+      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" 
+         target="_blank" rel="noopener" style="color:rgba(255,255,255,.9);">Google Scholar</a> 
+      once a month.
+    </p>
+    <p id="last-updated" style="color:rgba(255,255,255,.55);font-size:.85rem;margin-top:.5rem;"></p>
+  </div>
+</section>
+
+<!-- Scholar Stats -->
+<section class="section" style="padding-bottom:1.5rem;">
+  <div class="container">
+    <h2 class="section-title">Citation Metrics</h2>
+    <p class="section-subtitle">Sourced from Google Scholar &nbsp;·&nbsp; Updated automatically each month</p>
+    <div class="scholar-stats" id="scholar-stats">
+      <!-- Populated by JS from data/scholar.json -->
+      <div class="stat-box"><div class="stat-value skeleton" style="width:60%;margin:0 auto .5rem;">&nbsp;</div><div class="stat-label">Citations</div></div>
+      <div class="stat-box"><div class="stat-value skeleton" style="width:60%;margin:0 auto .5rem;">&nbsp;</div><div class="stat-label">Citations (5y)</div></div>
+      <div class="stat-box"><div class="stat-value skeleton" style="width:60%;margin:0 auto .5rem;">&nbsp;</div><div class="stat-label">h-index</div></div>
+      <div class="stat-box"><div class="stat-value skeleton" style="width:60%;margin:0 auto .5rem;">&nbsp;</div><div class="stat-label">h-index (5y)</div></div>
+      <div class="stat-box"><div class="stat-value skeleton" style="width:60%;margin:0 auto .5rem;">&nbsp;</div><div class="stat-label">i10-index</div></div>
+    </div>
+    <div class="alert alert-info" style="margin-top:0;">
+      <i class="fas fa-info-circle"></i>
+      Publication data is fetched automatically once a month via GitHub Actions. 
+      To configure this, set your <strong>Google Scholar profile ID</strong> in 
+      <code>scripts/update_scholar.py</code> and add it as a repository secret 
+      <code>SCHOLAR_ID</code>. You can also trigger a manual update from the 
+      <a href="https://github.com/jwoodfor/jwoodfor.github.io/actions" target="_blank" rel="noopener">Actions tab</a>.
+    </div>
+  </div>
+</section>
+
+<!-- Publication List -->
+<section class="section" style="padding-top:0.5rem;">
+  <div class="container">
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
+      <h2 class="section-title" style="margin-bottom:0;">All Publications</h2>
+      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" 
+         target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+        <i class="fas fa-graduation-cap"></i> View on Google Scholar
+      </a>
+    </div>
+    <div id="publications-container">
+      <!-- Loading skeletons -->
+      <div class="pub-item">
+        <div class="skeleton" style="height:1.1rem;width:75%;margin-bottom:.4rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:50%;margin-bottom:.3rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:35%;">&nbsp;</div>
+      </div>
+      <div class="pub-item">
+        <div class="skeleton" style="height:1.1rem;width:65%;margin-bottom:.4rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:55%;margin-bottom:.3rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:30%;">&nbsp;</div>
+      </div>
+      <div class="pub-item">
+        <div class="skeleton" style="height:1.1rem;width:80%;margin-bottom:.4rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:45%;margin-bottom:.3rem;">&nbsp;</div>
+        <div class="skeleton" style="height:.85rem;width:28%;">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">J. Woodford</span>
+      <ul class="footer-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://github.com/jwoodfor" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:your.email@university.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="/assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
