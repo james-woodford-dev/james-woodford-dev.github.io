@@ -1,0 +1,52 @@
+name: Update Google Scholar Data
+
+# Runs on the 1st of every month at 03:00 UTC
+# Can also be triggered manually from the Actions tab
+on:
+  schedule:
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+    inputs:
+      scholar_id:
+        description: 'Override Google Scholar profile ID (leave blank to use repository secret)'
+        required: false
+        type: string
+
+jobs:
+  update-scholar:
+    name: Fetch & commit Scholar data
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # needed to commit back to the repo
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install scholarly
+
+      - name: Fetch Scholar data
+        env:
+          # Use the manually provided ID if given, otherwise fall back to the repo secret.
+          # To configure: Settings → Secrets and variables → Actions → SCHOLAR_ID
+          SCHOLAR_ID: ${{ inputs.scholar_id || secrets.SCHOLAR_ID }}
+        run: python scripts/update_scholar.py
+
+      - name: Commit updated data
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/scholar.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit — Scholar data is already up to date."
+          else
+            git commit -m "chore: update Google Scholar data [automated]"
+            git push
+          fi

@@ -1,0 +1,21 @@
+{
+  "last_updated": "2026-03-12",
+  "profile": {
+    "name": "J. Woodford",
+    "affiliation": "[Your Department, Your University]",
+    "email": "your.email@university.edu",
+    "interests": [
+      "Research Area 1",
+      "Research Area 2",
+      "Research Area 3"
+    ],
+    "citations": 0,
+    "citations_5y": 0,
+    "h_index": 0,
+    "h_index_5y": 0,
+    "i10_index": 0,
+    "i10_index_5y": 0,
+    "scholar_url": "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  },
+  "publications": []
+}

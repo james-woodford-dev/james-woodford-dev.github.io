@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J. Woodford — Aspiring researcher and Ph.D. student. Personal academic website with research, publications, and more.">
+  <meta name="base-url" content="/">
+  <title>J. Woodford — Personal Website</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<!-- ── Navigation ──────────────────────────────────────────── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a class="nav-brand" href="/">J. Woodford</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/news.html">News</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/hobbies.html">Hobbies</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <!-- icon injected by JS -->
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text fade-in">
+        <h1 class="hero-name">J. Woodford</h1>
+        <p class="hero-title">Ph.D. Student &nbsp;·&nbsp; [Your Department]</p>
+        <p class="hero-institution">[Your University], [City, State]</p>
+        <p class="hero-bio">
+          Welcome! I am an aspiring researcher passionate about [your research area]. 
+          I am currently pursuing my Ph.D. at [Your University], where I focus on 
+          [brief description of your work]. My research aims to [impact / goal].
+        </p>
+        <div class="hero-social">
+          <a class="social-btn" href="mailto:your.email@university.edu" aria-label="Email">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+          <a class="social-btn" href="https://github.com/jwoodfor" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a class="social-btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a class="social-btn" href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+            <i class="fas fa-graduation-cap"></i> Scholar
+          </a>
+          <a class="social-btn" href="/cv.html" aria-label="CV">
+            <i class="fas fa-file-alt"></i> CV
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo fade-in fade-in-delay-2">
+        <img
+          src="/assets/img/profile.jpg"
+          alt="Profile photo of J. Woodford"
+          onerror="this.src='/assets/img/profile-placeholder.svg'"
+          width="200" height="200"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Research Interests ────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Research Interests</h2>
+    <p class="section-subtitle">Broad areas that drive my curiosity and work</p>
+    <div class="card-grid">
+      <div class="card fade-in">
+        <div class="card-icon">🔬</div>
+        <h3 class="card-title">[Research Area 1]</h3>
+        <p class="text-muted" style="font-size:0.93rem">
+          Brief description of this research area and what aspects you find most compelling.
+        </p>
+      </div>
+      <div class="card fade-in fade-in-delay-1">
+        <div class="card-icon">💡</div>
+        <h3 class="card-title">[Research Area 2]</h3>
+        <p class="text-muted" style="font-size:0.93rem">
+          Brief description of this research area and what you are exploring within it.
+        </p>
+      </div>
+      <div class="card fade-in fade-in-delay-2">
+        <div class="card-icon">🌐</div>
+        <h3 class="card-title">[Research Area 3]</h3>
+        <p class="text-muted" style="font-size:0.93rem">
+          Brief description of this research area and its real-world implications.
+        </p>
+      </div>
+    </div>
+    <div class="mt-3 text-center">
+      <a href="/research.html" class="btn btn-outline">
+        <i class="fas fa-flask"></i> View Research Details
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Recent News ───────────────────────────────────────────── -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Recent News</h2>
+    <p class="section-subtitle">Latest updates and highlights</p>
+    <ul class="news-list">
+      <li class="news-item">
+        <span class="news-date">Mar 2026</span>
+        <div class="news-content">
+          <span class="news-badge badge-misc">🎉 Start</span>
+          Welcome to my new website! I am excited to share my research journey here.
+        </div>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Jan 2026</span>
+        <div class="news-content">
+          <span class="news-badge badge-paper">📄 Paper</span>
+          New preprint on [your topic] — <em><a href="#">Title of Paper</a></em>. 
+          Submitted to [venue].
+        </div>
+      </li>
+      <li class="news-item">
+        <span class="news-date">Dec 2025</span>
+        <div class="news-content">
+          <span class="news-badge badge-award">🏆 Award</span>
+          Received [Award Name] from [Organization]. 
+        </div>
+      </li>
+    </ul>
+    <div class="mt-3">
+      <a href="/news.html" class="btn btn-outline">
+        <i class="fas fa-newspaper"></i> All News
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Recent Publications ───────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Selected Publications</h2>
+    <p class="section-subtitle">Highlights from my research output</p>
+
+    <!-- Placeholder pubs — replace or let the automated Scholar fetch populate publications.html -->
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">Title of Your Most Recent Paper</a>
+      </div>
+      <div class="pub-authors"><em>J. Woodford</em>, Co-Author A, Co-Author B</div>
+      <div class="pub-venue">Journal / Conference Name, 2026</div>
+      <div class="pub-tags">
+        <span class="tag tag-cite">📖 0 citations</span>
+        <a href="#" class="tag">🔗 View</a>
+      </div>
+    </div>
+
+    <div class="pub-item">
+      <div class="pub-title">
+        <a href="#">Title of Another Paper</a>
+      </div>
+      <div class="pub-authors">Co-Author A, <em>J. Woodford</em>, Co-Author C</div>
+      <div class="pub-venue">Another Venue, 2025</div>
+      <div class="pub-tags">
+        <span class="tag tag-cite">📖 0 citations</span>
+        <a href="#" class="tag">🔗 View</a>
+      </div>
+    </div>
+
+    <div class="mt-3">
+      <a href="/publications.html" class="btn btn-primary">
+        <i class="fas fa-scroll"></i> All Publications
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">J. Woodford</span>
+      <ul class="footer-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://github.com/jwoodfor" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <i class="fas fa-graduation-cap"></i>
+        </a>
+        <a href="mailto:your.email@university.edu" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <p class="footer-copy">
+      &copy; <span id="year"></span> J. Woodford &mdash; Built with ♥ and hosted on GitHub Pages.
+    </p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" title="Back to top" style="
+  position:fixed;bottom:2rem;right:2rem;
+  background:var(--accent);color:#fff;
+  border:none;border-radius:50%;
+  width:42px;height:42px;cursor:pointer;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;box-shadow:var(--shadow);">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="/assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

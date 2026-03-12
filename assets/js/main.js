@@ -1,0 +1,202 @@
+/* =============================================================
+   main.js — Personal Academic Website
+   ============================================================= */
+
+(function () {
+  'use strict';
+
+  /* ── Theme (dark / light) ──────────────────────────────── */
+  const THEME_KEY = 'theme';
+  const themeToggle = document.getElementById('theme-toggle');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.innerHTML = theme === 'dark'
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>';
+    }
+  }
+
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  applyTheme(getPreferredTheme());
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, next);
+      applyTheme(next);
+    });
+  }
+
+  /* ── Mobile nav hamburger ───────────────────────────────── */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.getElementById('nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    // Close when a link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* ── Mark active nav link ───────────────────────────────── */
+  (function markActive() {
+    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      // Exact match or prefix (for blog sub-pages)
+      if (
+        href === path ||
+        (href !== '/' && href !== '/index.html' && path.startsWith(href.replace(/\.html$/, '')))
+      ) {
+        a.classList.add('active');
+      }
+    });
+  })();
+
+  /* ── Skill bar animation on scroll ─────────────────────── */
+  function animateSkillBars() {
+    document.querySelectorAll('.skill-fill').forEach(bar => {
+      const target = bar.getAttribute('data-width');
+      if (target) bar.style.width = target;
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { animateSkillBars(); obs.disconnect(); } });
+    }, { threshold: 0.2 });
+    const skillSection = document.querySelector('.skill-list');
+    if (skillSection) obs.observe(skillSection);
+  } else {
+    animateSkillBars();
+  }
+
+  /* ── Load Google Scholar data (publications page) ───────── */
+  async function loadScholarData() {
+    const container = document.getElementById('publications-container');
+    const statsEl   = document.getElementById('scholar-stats');
+    if (!container) return;
+
+    try {
+      // Determine base path (works both from root and subdirs)
+      const base = document.querySelector('meta[name="base-url"]')?.content || '/';
+      const res  = await fetch(base + 'data/scholar.json');
+      if (!res.ok) throw new Error('Network response was not ok');
+      const data = await res.json();
+      renderScholarData(data, container, statsEl);
+    } catch (err) {
+      container.innerHTML =
+        '<p class="text-muted">Could not load publications data. Please check back later.</p>';
+    }
+  }
+
+  function escHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function renderScholarData(data, container, statsEl) {
+    // Stats
+    if (statsEl && data.profile) {
+      const p = data.profile;
+      statsEl.innerHTML = `
+        <div class="stat-box"><div class="stat-value">${escHtml(String(p.citations || 0))}</div><div class="stat-label">Citations</div></div>
+        <div class="stat-box"><div class="stat-value">${escHtml(String(p.citations_5y || 0))}</div><div class="stat-label">Citations (5y)</div></div>
+        <div class="stat-box"><div class="stat-value">${escHtml(String(p.h_index || 0))}</div><div class="stat-label">h-index</div></div>
+        <div class="stat-box"><div class="stat-value">${escHtml(String(p.h_index_5y || 0))}</div><div class="stat-label">h-index (5y)</div></div>
+        <div class="stat-box"><div class="stat-value">${escHtml(String(p.i10_index || 0))}</div><div class="stat-label">i10-index</div></div>`;
+    }
+
+    const pubs = data.publications || [];
+    if (pubs.length === 0) {
+      container.innerHTML = '<p class="text-muted">No publications found. Run the Scholar update script to populate this section.</p>';
+      return;
+    }
+
+    const html = pubs.map((pub, i) => {
+      const title   = escHtml(pub.title   || 'Untitled');
+      const authors = escHtml(pub.authors || '');
+      const venue   = escHtml(pub.venue   || '');
+      const year    = escHtml(String(pub.year || ''));
+      const cites   = pub.citations || 0;
+      const url     = pub.url ? escHtml(pub.url) : '';
+
+      return `
+      <div class="pub-item">
+        <div class="pub-title">
+          ${url ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>` : title}
+        </div>
+        <div class="pub-authors">${authors}</div>
+        ${venue ? `<div class="pub-venue">${venue}${year ? ', ' + year : ''}</div>` : (year ? `<div class="pub-venue">${year}</div>` : '')}
+        <div class="pub-tags">
+          ${cites > 0 ? `<span class="tag tag-cite">📖 ${cites} citation${cites !== 1 ? 's' : ''}</span>` : ''}
+          ${url ? `<a href="${url}" target="_blank" rel="noopener" class="tag">🔗 View</a>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+
+    container.innerHTML = html;
+
+    // Update "last updated" text
+    const lastUpdated = document.getElementById('last-updated');
+    if (lastUpdated && data.last_updated) {
+      lastUpdated.textContent = 'Last updated: ' + data.last_updated;
+    }
+  }
+
+  // Run on publications page
+  loadScholarData();
+
+  /* ── Publication year filter ─────────────────────────────── */
+  const yearFilter = document.getElementById('year-filter');
+  if (yearFilter) {
+    yearFilter.addEventListener('change', function () {
+      const val = this.value;
+      document.querySelectorAll('.pub-item[data-year]').forEach(el => {
+        el.style.display = (!val || el.dataset.year === val) ? '' : 'none';
+      });
+    });
+  }
+
+  /* ── Scroll to top button ───────────────────────────────── */
+  const scrollTopBtn = document.getElementById('scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.style.opacity = window.scrollY > 400 ? '1' : '0';
+      scrollTopBtn.style.pointerEvents = window.scrollY > 400 ? 'auto' : 'none';
+    });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  /* ── Copy email to clipboard ────────────────────────────── */
+  document.querySelectorAll('[data-copy-email]').forEach(el => {
+    el.addEventListener('click', () => {
+      const email = el.getAttribute('data-copy-email');
+      navigator.clipboard.writeText(email).then(() => {
+        const orig = el.textContent;
+        el.textContent = 'Copied!';
+        setTimeout(() => { el.textContent = orig; }, 2000);
+      });
+    });
+  });
+
+})();

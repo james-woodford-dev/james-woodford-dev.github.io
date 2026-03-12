@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="J. Woodford — Curriculum Vitae: education, experience, awards, and skills.">
+  <meta name="base-url" content="/">
+  <title>CV — J. Woodford</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a class="nav-brand" href="/">J. Woodford</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/research.html">Research</a></li>
+      <li><a href="/publications.html">Publications</a></li>
+      <li><a href="/news.html">News</a></li>
+      <li><a href="/cv.html">CV</a></li>
+      <li><a href="/hobbies.html">Hobbies</a></li>
+      <li><a href="/blog/">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+    <div>
+      <h1 style="color:#fff;margin-bottom:.5rem;">
+        <i class="fas fa-file-alt" style="margin-right:.6rem;opacity:.8"></i>Curriculum Vitae
+      </h1>
+      <p style="color:rgba(255,255,255,.75);max-width:620px;">
+        My academic and professional background.
+      </p>
+    </div>
+    <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+      <a href="/assets/JWoodford_CV.pdf" download class="btn btn-primary btn-print">
+        <i class="fas fa-download"></i> Download PDF
+      </a>
+      <button onclick="window.print()" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" aria-label="Print CV">
+        <i class="fas fa-print"></i> Print
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cv-grid">
+
+      <!-- Left column: timeline sections -->
+      <div>
+
+        <!-- Education -->
+        <div style="margin-bottom:3rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-graduation-cap"></i></span>
+            <h2>Education</h2>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-period">2025 – Present</div>
+              <div class="timeline-title">Ph.D. in [Your Field]</div>
+              <div class="timeline-place">[Your University], [City, State]</div>
+              <div class="timeline-desc">
+                Advisor: Prof. [Advisor Name]. 
+                Focus: [brief focus area].
+                GPA: [X.X / 4.0]
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">2021 – 2025</div>
+              <div class="timeline-title">B.S. / B.A. in [Your Undergrad Field]</div>
+              <div class="timeline-place">[Undergraduate University], [City, State]</div>
+              <div class="timeline-desc">
+                GPA: [X.X / 4.0] &nbsp;·&nbsp; Honors: [Magna Cum Laude / etc.]<br>
+                Thesis: <em>[Thesis Title]</em>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Experience -->
+        <div style="margin-bottom:3rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-briefcase"></i></span>
+            <h2>Research Experience</h2>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-period">Summer 2024</div>
+              <div class="timeline-title">Research Intern</div>
+              <div class="timeline-place">[Lab / Company], [City, State]</div>
+              <div class="timeline-desc">
+                Brief description of the internship project and outcomes.
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">2023 – 2024</div>
+              <div class="timeline-title">Undergraduate Research Assistant</div>
+              <div class="timeline-place">[Lab Name], [University]</div>
+              <div class="timeline-desc">
+                Brief description of your role and contributions.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Teaching -->
+        <div style="margin-bottom:3rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-chalkboard-teacher"></i></span>
+            <h2>Teaching</h2>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-period">Spring 2026</div>
+              <div class="timeline-title">Teaching Assistant — [Course Name]</div>
+              <div class="timeline-place">[University]</div>
+              <div class="timeline-desc">
+                Responsibilities: office hours, grading, recitation sections.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Publications (summary) -->
+        <div>
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-scroll"></i></span>
+            <h2>Publications</h2>
+          </div>
+          <p style="font-size:.93rem;color:var(--text-muted);margin-bottom:.75rem;">
+            See the full list on the <a href="/publications.html">Publications page</a> or
+            <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener">Google Scholar</a>.
+          </p>
+          <div class="pub-item">
+            <div class="pub-title"><a href="#">[Paper Title 1]</a></div>
+            <div class="pub-authors"><em>J. Woodford</em>, Co-Author A, Co-Author B</div>
+            <div class="pub-venue">[Venue], [Year]</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title"><a href="#">[Paper Title 2]</a></div>
+            <div class="pub-authors">Co-Author A, <em>J. Woodford</em></div>
+            <div class="pub-venue">[Venue], [Year]</div>
+          </div>
+        </div>
+
+      </div><!-- end left column -->
+
+      <!-- Right column: skills, awards, service -->
+      <div>
+
+        <!-- Skills -->
+        <div style="margin-bottom:2.5rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-code"></i></span>
+            <h2>Skills</h2>
+          </div>
+
+          <h4 style="margin-bottom:.75rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Programming</h4>
+          <ul class="skill-list" style="margin-bottom:1.25rem;">
+            <li class="skill-item">
+              <div class="skill-name"><span>Python</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90%" style="width:0"></div></div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-name"><span>MATLAB / R</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75%" style="width:0"></div></div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-name"><span>C / C++</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="55%" style="width:0"></div></div>
+            </li>
+            <li class="skill-item">
+              <div class="skill-name"><span>JavaScript / Web</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="60%" style="width:0"></div></div>
+            </li>
+          </ul>
+
+          <h4 style="margin-bottom:.75rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Tools &amp; Frameworks</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;">
+            <span class="tag">PyTorch</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">NumPy / SciPy</span>
+            <span class="tag">LaTeX</span>
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Linux / HPC</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Jupyter</span>
+          </div>
+        </div>
+
+        <!-- Awards -->
+        <div style="margin-bottom:2.5rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-trophy"></i></span>
+            <h2>Awards &amp; Honors</h2>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🏆</span>
+            <div>
+              <div style="font-weight:700;font-size:.95rem;">[Award Name]</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">[Organization] · [Year]</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🎖️</span>
+            <div>
+              <div style="font-weight:700;font-size:.95rem;">[Scholarship / Fellowship]</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">[Organization] · [Year]</div>
+            </div>
+          </div>
+          <div class="award-item">
+            <span class="award-icon">🥇</span>
+            <div>
+              <div style="font-weight:700;font-size:.95rem;">Dean's List</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">[University] · [Years]</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service -->
+        <div style="margin-bottom:2.5rem;">
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-hands-helping"></i></span>
+            <h2>Service</h2>
+          </div>
+          <ul style="list-style:disc;padding-left:1.25rem;font-size:.92rem;display:flex;flex-direction:column;gap:.4rem;">
+            <li>Reviewer — [Conference / Journal, Year]</li>
+            <li>Student Volunteer — [Conference, Year]</li>
+            <li>[Other service role]</li>
+          </ul>
+        </div>
+
+        <!-- Languages -->
+        <div>
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-language"></i></span>
+            <h2>Languages</h2>
+          </div>
+          <ul style="list-style:none;padding:0;font-size:.92rem;display:flex;flex-direction:column;gap:.4rem;">
+            <li>🇺🇸 English — Native</li>
+            <li>🇪🇸 [Language 2] — [Level]</li>
+          </ul>
+        </div>
+
+      </div><!-- end right column -->
+
+    </div><!-- end cv-grid -->
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-name">J. Woodford</span>
+      <ul class="footer-links">
+        <li><a href="/research.html">Research</a></li>
+        <li><a href="/publications.html">Publications</a></li>
+        <li><a href="/cv.html">CV</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://github.com/jwoodfor" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:your.email@university.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="/assets/js/main.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
