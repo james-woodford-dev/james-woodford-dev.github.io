@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="J. Woodford — Aspiring researcher and Ph.D. student. Personal academic website with research, publications, and more.">
-  <meta name="base-url" content="/">
+  <meta name="base-url" content="">
   <title>J. Woodford — Personal Website</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
@@ -17,15 +17,15 @@
 <!-- ── Navigation ──────────────────────────────────────────── -->
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container">
-    <a class="nav-brand" href="/">J. Woodford</a>
+    <a class="nav-brand" href="index.html">J. Woodford</a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/research.html">Research</a></li>
-      <li><a href="/publications.html">Publications</a></li>
-      <li><a href="/news.html">News</a></li>
-      <li><a href="/cv.html">CV</a></li>
-      <li><a href="/hobbies.html">Hobbies</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -43,37 +43,37 @@
   <div class="container">
     <div class="hero-grid">
       <div class="hero-text fade-in">
-        <h1 class="hero-name">J. Woodford</h1>
-        <p class="hero-title">Ph.D. Student &nbsp;·&nbsp; [Your Department]</p>
-        <p class="hero-institution">[Your University], [City, State]</p>
-        <p class="hero-bio">
+        <h1 class="hero-name" id="hero-name">J. Woodford</h1>
+        <p class="hero-title" id="hero-title">Ph.D. Student &nbsp;·&nbsp; [Your Department]</p>
+        <p class="hero-institution" id="hero-institution">[Your University], [City, State]</p>
+        <p class="hero-bio" id="hero-bio">
           Welcome! I am an aspiring researcher passionate about [your research area]. 
           I am currently pursuing my Ph.D. at [Your University], where I focus on 
           [brief description of your work]. My research aims to [impact / goal].
         </p>
         <div class="hero-social">
-          <a class="social-btn" href="mailto:your.email@university.edu" aria-label="Email">
+          <a class="social-btn" href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email">
             <i class="fas fa-envelope"></i> Email
           </a>
-          <a class="social-btn" href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" aria-label="GitHub">
+          <a class="social-btn" href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub">
             <i class="fab fa-github"></i> GitHub
           </a>
-          <a class="social-btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <a class="social-btn" href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn">
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a class="social-btn" href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <a class="social-btn" href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar">
             <i class="fas fa-graduation-cap"></i> Scholar
           </a>
-          <a class="social-btn" href="/cv.html" aria-label="CV">
+          <a class="social-btn" href="cv.html" aria-label="CV">
             <i class="fas fa-file-alt"></i> CV
           </a>
         </div>
       </div>
       <div class="hero-photo fade-in fade-in-delay-2">
         <img
-          src="/assets/img/profile.jpg"
+          src="assets/img/profile.jpg"
           alt="Profile photo of J. Woodford"
-          onerror="this.src='/assets/img/profile-placeholder.svg'"
+          onerror="this.src='assets/img/profile-placeholder.svg'"
           width="200" height="200"
         >
       </div>
@@ -86,7 +86,7 @@
   <div class="container">
     <h2 class="section-title">Research Interests</h2>
     <p class="section-subtitle">Broad areas that drive my curiosity and work</p>
-    <div class="card-grid">
+    <div class="card-grid" id="research-interests-grid">
       <div class="card fade-in">
         <div class="card-icon">🔬</div>
         <h3 class="card-title">[Research Area 1]</h3>
@@ -110,7 +110,7 @@
       </div>
     </div>
     <div class="mt-3 text-center">
-      <a href="/research.html" class="btn btn-outline">
+      <a href="research.html" class="btn btn-outline">
         <i class="fas fa-flask"></i> View Research Details
       </a>
     </div>
@@ -122,7 +122,7 @@
   <div class="container">
     <h2 class="section-title">Recent News</h2>
     <p class="section-subtitle">Latest updates and highlights</p>
-    <ul class="news-list">
+    <ul class="news-list" id="home-news-list">
       <li class="news-item">
         <span class="news-date">Mar 2026</span>
         <div class="news-content">
@@ -147,7 +147,7 @@
       </li>
     </ul>
     <div class="mt-3">
-      <a href="/news.html" class="btn btn-outline">
+      <a href="news.html" class="btn btn-outline">
         <i class="fas fa-newspaper"></i> All News
       </a>
     </div>
@@ -186,7 +186,7 @@
     </div>
 
     <div class="mt-3">
-      <a href="/publications.html" class="btn btn-primary">
+      <a href="publications.html" class="btn btn-primary">
         <i class="fas fa-scroll"></i> All Publications
       </a>
     </div>
@@ -199,22 +199,22 @@
     <div class="footer-inner">
       <span class="footer-name">J. Woodford</span>
       <ul class="footer-links">
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/publications.html">Publications</a></li>
-        <li><a href="/cv.html">CV</a></li>
-        <li><a href="/blog/">Blog</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="blog/">Blog</a></li>
       </ul>
       <div class="footer-social">
-        <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" aria-label="GitHub">
+        <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar">
           <i class="fas fa-graduation-cap"></i>
         </a>
-        <a href="mailto:your.email@university.edu" aria-label="Email">
+        <a href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
       </div>
@@ -236,7 +236,7 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
-<script src="/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

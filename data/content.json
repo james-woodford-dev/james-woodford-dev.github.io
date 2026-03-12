@@ -1,0 +1,57 @@
+{
+  "_note": "Edit this file to update your website content. You do NOT need to touch any HTML file for the fields listed here.",
+
+  "name": "J. Woodford",
+  "title": "Ph.D. Student",
+  "department": "[Your Department]",
+  "university": "[Your University]",
+  "city": "[City, State]",
+  "bio": "Welcome! I am an aspiring researcher passionate about [your research area]. I am currently pursuing my Ph.D. at [Your University], where I focus on [brief description of your work]. My research aims to [impact / goal].",
+
+  "email": "your.email@university.edu",
+  "github_username": "james-woodford-dev",
+  "linkedin_profile": "yourprofile",
+  "scholar_id": "YOUR_SCHOLAR_ID",
+
+  "research_interests": [
+    {
+      "icon": "🔬",
+      "title": "[Research Area 1]",
+      "description": "Brief description of this research area and what aspects you find most compelling."
+    },
+    {
+      "icon": "💡",
+      "title": "[Research Area 2]",
+      "description": "Brief description of this research area and what you are exploring within it."
+    },
+    {
+      "icon": "🌐",
+      "title": "[Research Area 3]",
+      "description": "Brief description of this research area and its real-world implications."
+    }
+  ],
+
+  "news": [
+    {
+      "date": "Mar 2026",
+      "type": "misc",
+      "badge_class": "badge-misc",
+      "badge_text": "🎉 Start",
+      "text": "Welcome to my new website! I am excited to share my research journey here."
+    },
+    {
+      "date": "Jan 2026",
+      "type": "paper",
+      "badge_class": "badge-paper",
+      "badge_text": "📄 Paper",
+      "text": "New preprint on [your topic] — <em><a href=\"#\">Title of Paper</a></em>. Submitted to [venue]."
+    },
+    {
+      "date": "Dec 2025",
+      "type": "award",
+      "badge_class": "badge-award",
+      "badge_text": "🏆 Award",
+      "text": "Received [Award Name] from [Organization]."
+    }
+  ]
+}

@@ -56,16 +56,21 @@
 
   /* ── Mark active nav link ───────────────────────────────── */
   (function markActive() {
-    const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
     document.querySelectorAll('.nav-links a').forEach(a => {
       const href = a.getAttribute('href') || '';
-      // Exact match or prefix (for blog sub-pages)
-      if (
-        href === path ||
-        (href !== '/' && href !== '/index.html' && path.startsWith(href.replace(/\.html$/, '')))
-      ) {
-        a.classList.add('active');
-      }
+      if (!href || href === '#') return;
+      try {
+        // Resolve relative href against the current page URL to get an absolute path
+        const resolved = new URL(href, window.location.href).pathname.replace(/\/$/, '') || '/';
+        const isHome   = resolved === '/' || resolved.endsWith('/index.html');
+        if (
+          resolved === currentPath ||
+          (!isHome && currentPath.startsWith(resolved.replace(/\.html$/, '')))
+        ) {
+          a.classList.add('active');
+        }
+      } catch (_) { /* ignore invalid hrefs */ }
     });
   })();
 
@@ -86,6 +91,107 @@
     animateSkillBars();
   }
 
+  /* ── Load content.json and populate the page ───────────── */
+  async function loadContent() {
+    const base = document.querySelector('meta[name="base-url"]')?.content ?? '';
+    try {
+      const res = await fetch(base + 'data/content.json');
+      if (!res.ok) return;
+      applyContent(await res.json());
+    } catch (_) { /* fall back to HTML defaults */ }
+  }
+
+  function applyContent(c) {
+    // ── Helper: safely set textContent on an element by id ──
+    function setText(id, val) {
+      const el = document.getElementById(id);
+      if (el && val != null) el.textContent = val;
+    }
+
+    // ── Nav brand & footer name ──────────────────────────────
+    if (c.name) {
+      document.querySelectorAll('.nav-brand, .footer-name').forEach(el => {
+        el.textContent = c.name;
+      });
+    }
+
+    // ── Social link hrefs (data-content-href="github|linkedin|scholar|email") ──
+    if (c.github_username) {
+      document.querySelectorAll('[data-content-href="github"]').forEach(a => {
+        a.href = 'https://github.com/' + c.github_username;
+      });
+    }
+    if (c.linkedin_profile) {
+      document.querySelectorAll('[data-content-href="linkedin"]').forEach(a => {
+        a.href = 'https://www.linkedin.com/in/' + c.linkedin_profile;
+      });
+    }
+    if (c.scholar_id) {
+      document.querySelectorAll('[data-content-href="scholar"]').forEach(a => {
+        a.href = 'https://scholar.google.com/citations?user=' + c.scholar_id;
+      });
+    }
+    if (c.email) {
+      document.querySelectorAll('[data-content-href="email"]').forEach(a => {
+        a.href = 'mailto:' + c.email;
+      });
+    }
+
+    // ── Hero section (index.html) ────────────────────────────
+    if (c.name)  setText('hero-name', c.name);
+    if (c.title || c.department) {
+      setText('hero-title',
+        [c.title, c.department].filter(Boolean).join('\u00a0·\u00a0'));
+    }
+    if (c.university || c.city) {
+      setText('hero-institution',
+        [c.university, c.city].filter(Boolean).join(', '));
+    }
+    if (c.bio) setText('hero-bio', c.bio);
+
+    // ── Research interests grid (index.html) ─────────────────
+    const grid = document.getElementById('research-interests-grid');
+    if (grid && Array.isArray(c.research_interests) && c.research_interests.length) {
+      // Preserve the original fade-in delay classes for the first three cards
+      const delayClasses = ['fade-in', 'fade-in fade-in-delay-1', 'fade-in fade-in-delay-2'];
+      grid.innerHTML = c.research_interests.map((item, i) => `
+        <div class="card ${delayClasses[i] || 'fade-in'}">
+          <div class="card-icon">${item.icon || ''}</div>
+          <h3 class="card-title">${item.title || ''}</h3>
+          <p class="text-muted" style="font-size:0.93rem">${item.description || ''}</p>
+        </div>`).join('');
+    }
+
+    // ── News items — home page snippet (index.html) ──────────
+    const homeNews = document.getElementById('home-news-list');
+    if (homeNews && Array.isArray(c.news) && c.news.length) {
+      homeNews.innerHTML = c.news.slice(0, 3).map(item => `
+        <li class="news-item">
+          <span class="news-date">${item.date || ''}</span>
+          <div class="news-content">
+            <span class="news-badge ${item.badge_class || ''}">${item.badge_text || ''}</span>
+            ${item.text || ''}
+          </div>
+        </li>`).join('');
+    }
+
+    // ── News items — full news page (news.html) ──────────────
+    const fullNews = document.getElementById('full-news-list');
+    if (fullNews && Array.isArray(c.news) && c.news.length) {
+      fullNews.innerHTML = c.news.map(item => `
+        <li class="news-item" data-type="${item.type || 'misc'}">
+          <span class="news-date">${item.date || ''}</span>
+          <div class="news-content">
+            <span class="news-badge ${item.badge_class || ''}">${item.badge_text || ''}</span>
+            ${item.text || ''}
+          </div>
+        </li>`).join('');
+    }
+  }
+
+  // Run content loading on every page
+  loadContent();
+
   /* ── Load Google Scholar data (publications page) ───────── */
   async function loadScholarData() {
     const container = document.getElementById('publications-container');
@@ -94,7 +200,7 @@
 
     try {
       // Determine base path (works both from root and subdirs)
-      const base = document.querySelector('meta[name="base-url"]')?.content || '/';
+      const base = document.querySelector('meta[name="base-url"]')?.content ?? '';
       const res  = await fetch(base + 'data/scholar.json');
       if (!res.ok) throw new Error('Network response was not ok');
       const data = await res.json();

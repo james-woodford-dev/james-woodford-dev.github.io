@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="J. Woodford — Curriculum Vitae: education, experience, awards, and skills.">
-  <meta name="base-url" content="/">
+  <meta name="base-url" content="">
   <title>CV — J. Woodford</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -15,15 +15,15 @@
 
 <nav class="navbar" role="navigation" aria-label="Main navigation">
   <div class="container">
-    <a class="nav-brand" href="/">J. Woodford</a>
+    <a class="nav-brand" href="index.html">J. Woodford</a>
     <ul class="nav-links" id="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/research.html">Research</a></li>
-      <li><a href="/publications.html">Publications</a></li>
-      <li><a href="/news.html">News</a></li>
-      <li><a href="/cv.html">CV</a></li>
-      <li><a href="/hobbies.html">Hobbies</a></li>
-      <li><a href="/blog/">Blog</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="cv.html">CV</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
@@ -46,7 +46,7 @@
       </p>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="/assets/JWoodford_CV.pdf" download class="btn btn-primary btn-print">
+      <a href="assets/JWoodford_CV.pdf" download class="btn btn-primary btn-print">
         <i class="fas fa-download"></i> Download PDF
       </a>
       <button onclick="window.print()" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" aria-label="Print CV">
@@ -143,8 +143,8 @@
             <h2>Publications</h2>
           </div>
           <p style="font-size:.93rem;color:var(--text-muted);margin-bottom:.75rem;">
-            See the full list on the <a href="/publications.html">Publications page</a> or
-            <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener">Google Scholar</a>.
+            See the full list on the <a href="publications.html">Publications page</a> or
+            <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar">Google Scholar</a>.
           </p>
           <div class="pub-item">
             <div class="pub-title"><a href="#">[Paper Title 1]</a></div>
@@ -268,16 +268,16 @@
     <div class="footer-inner">
       <span class="footer-name">J. Woodford</span>
       <ul class="footer-links">
-        <li><a href="/research.html">Research</a></li>
-        <li><a href="/publications.html">Publications</a></li>
-        <li><a href="/cv.html">CV</a></li>
-        <li><a href="/blog/">Blog</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="blog/">Blog</a></li>
       </ul>
       <div class="footer-social">
-        <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="mailto:your.email@university.edu" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
     <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
@@ -288,7 +288,7 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
-<script src="/assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
