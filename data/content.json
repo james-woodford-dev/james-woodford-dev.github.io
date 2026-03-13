@@ -15,19 +15,19 @@
 
   "research_interests": [
     {
-      "icon": "🔬",
+      "icon": "icon goes here",
       "title": "[Research Area 1]",
-      "description": "Brief description of this research area and what aspects you find most compelling."
+      "description": "TBD"
     },
     {
-      "icon": "💡",
+      "icon": "icon goes here",
       "title": "[Research Area 2]",
-      "description": "Brief description of this research area and what you are exploring within it."
+      "description": "TBD"
     },
     {
-      "icon": "🌐",
+      "icon": "icon goes here",
       "title": "[Research Area 3]",
-      "description": "Brief description of this research area and its real-world implications."
+      "description": "TBD"
     }
   ],
 
@@ -37,21 +37,21 @@
       "type": "misc",
       "badge_class": "badge-misc",
       "badge_text": "🎉 Start",
-      "text": "Welcome to my new website! I am excited to share my research journey here."
+      "text": "TBD"
     },
     {
       "date": "Jan 2026",
       "type": "paper",
       "badge_class": "badge-paper",
       "badge_text": "📄 Paper",
-      "text": "New preprint on [your topic] — <em><a href=\"#\">Title of Paper</a></em>. Submitted to [venue]."
+      "text": "TBD"
     },
     {
       "date": "Dec 2025",
       "type": "award",
       "badge_class": "badge-award",
       "badge_text": "🏆 Award",
-      "text": "Received [Award Name] from [Organization]."
+      "text": "TBD"
     }
   ]
 }
