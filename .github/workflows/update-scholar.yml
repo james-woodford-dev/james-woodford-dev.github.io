@@ -33,10 +33,10 @@ jobs:
         run: pip install scholarly
 
       - name: Fetch Scholar data
-        env:
+        # env:
           # Use the manually provided ID if given, otherwise fall back to the repo secret.
           # To configure: Settings → Secrets and variables → Actions → SCHOLAR_ID
-          SCHOLAR_ID: ${{ inputs.scholar_id || secrets.SCHOLAR_ID }}
+          # SCHOLAR_ID: ${{ inputs.scholar_id || secrets.SCHOLAR_ID }}
         run: python scripts/update_scholar.py
 
       - name: Commit updated data
