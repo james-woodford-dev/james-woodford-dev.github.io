@@ -38,7 +38,7 @@ except ImportError:
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 # Set your Google Scholar profile ID here, or pass it via the SCHOLAR_ID env var.
-SCHOLAR_ID = "lofMBZ4AAAAJ&hl"
+SCHOLAR_ID = "lofMBZ4AAAAJ"
 
 # Path to the output JSON file (relative to the repo root)
 REPO_ROOT  = Path(__file__).resolve().parent.parent
