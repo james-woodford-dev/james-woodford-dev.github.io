@@ -10,23 +10,18 @@
 
   "email": "james.woodford@ualberta.ca",
   "github_username": "james-woodford-dev",
-  "linkedin_profile": "www.linkedin.com/in/james-woodford-2b468316a",
+  "linkedin_profile": "https://www.linkedin.com/in/james-woodford-2b468316a",
   "scholar_id": "https://scholar.google.com/citations?user=lofMBZ4AAAAJ&hl=en",
 
   "research_interests": [
     {
-      "icon": "icon goes here",
-      "title": "[Research Area 1]",
+      "icon": "🌱⚡",
+      "title": "Green Energy",
       "description": "TBD"
     },
     {
-      "icon": "icon goes here",
-      "title": "[Research Area 2]",
-      "description": "TBD"
-    },
-    {
-      "icon": "icon goes here",
-      "title": "[Research Area 3]",
+      "icon": "🖥️Σ",
+      "title": "Computational Methods",
       "description": "TBD"
     }
   ],
