@@ -1,52 +1,102 @@
 {
   "_note": "Edit this file to update your website content. You do NOT need to touch any HTML file for the fields listed here.",
-
   "name": "James Woodford",
-  "title": "M.Sc. Student",
+  "title": "Ph.D. Student",
   "department": "Mechanical Engineering",
   "university": "University of Alberta",
   "city": "Edmonton, AB, Canada",
-  "bio": "Welcome! I am an aspiring researcher passionate about [your research area]. I am currently pursuing my M.Sc. at the University of Alberta, where I focus on developing numerical software for green energy applications.",
-
+  "bio": "I am a Ph.D. student in Mechanical Engineering at the University of Alberta, working in the Energy Systems Design Laboratory. I build numerical methods and simulation software for electrochemical energy devices, from 3D reconstructions of porous electrodes to the finite element solvers that run on them. My goal is to make pore-resolved simulations fast enough that modelers no longer have to trade physical fidelity for tractability.",
   "email": "james.woodford@ualberta.ca",
   "github_username": "james-woodford-dev",
-  "linkedin_profile": "https://www.linkedin.com/in/james-woodford-2b468316a",
-  "scholar_id": "https://scholar.google.com/citations?user=lofMBZ4AAAAJ&hl=en",
-
+  "linkedin_profile": "james-woodford-2b468316a",
+  "scholar_id": "lofMBZ4AAAAJ",
   "research_interests": [
     {
-      "icon": "🌱⚡",
-      "title": "Green Energy",
-      "description": "TBD"
+      "icon": "fa-microchip",
+      "title": "Scalable Numerical Methods",
+      "description": "Finite element discretizations, preconditioners, and parallel/GPU solvers for the large, stiff, nonlinear systems that pore-resolved models produce."
     },
     {
-      "icon": "🖥️Σ",
-      "title": "Computational Methods",
-      "description": "TBD"
+      "icon": "fa-bolt",
+      "title": "Electrochemical Interfaces & Transport",
+      "description": "Microscale models coupling interfacial reaction kinetics with charge and multiphase mass transport in catalyst layers and porous electrodes."
+    },
+    {
+      "icon": "fa-microscope",
+      "title": "Image-Based Modeling",
+      "description": "Turning PFIB-SEM tomography into simulation-ready microstructures, so models reflect the materials that are actually made."
     }
   ],
-
   "news": [
     {
-      "date": "Mar 2026",
-      "type": "misc",
-      "badge_class": "badge-misc",
-      "badge_text": "🎉 Start",
-      "text": "TBD"
+      "date": "Oct 2026",
+      "type": "talk",
+      "badge_class": "badge-talk",
+      "badge_text": "🎤 Talk",
+      "text": "Presented <em><a href=\"https://ecs.confex.com/ecs/250/meetingapp.cgi/Paper/223228\" target=\"_blank\" rel=\"noopener\">Impact of varying ionomer coverage on water intrusion, mass transport, and electrochemical performance in PEMFC catalyst layers via 3D microscale modeling</a></em> at the 250th ECS Meeting."
     },
     {
-      "date": "Jan 2026",
+      "date": "Sep 2026",
+      "type": "misc",
+      "badge_class": "badge-misc",
+      "badge_text": "🎓 Start",
+      "text": "Started my Ph.D. in Mechanical Engineering at the University of Alberta."
+    },
+    {
+      "date": "2026",
+      "type": "paper",
+      "badge_class": "badge-paper",
+      "badge_text": "📄 Preprint",
+      "text": "Preprint with J. Mouallem et al.: <em><a href=\"https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7624452\" target=\"_blank\" rel=\"noopener\">Quantifying causes of voltage loss in anion exchange membrane water electrolysis</a></em>."
+    },
+    {
+      "date": "2025",
+      "type": "talk",
+      "badge_class": "badge-talk",
+      "badge_text": "🎤 Invited",
+      "text": "Our work on multi-scale computational analysis of cathode catalyst layers was presented as an invited talk at the International Workshop on Fuel Cell MEA, Fraunhofer ISE."
+    },
+    {
+      "date": "Jul 2024",
       "type": "paper",
       "badge_class": "badge-paper",
       "badge_text": "📄 Paper",
-      "text": "TBD"
+      "text": "Published in <strong>ACS Applied Materials &amp; Interfaces</strong>: <em><a href=\"https://pubs.acs.org/doi/abs/10.1021/acsami.4c04641\" target=\"_blank\" rel=\"noopener\">Unveiling the role of PTFE surface coverage on controlling gas diffusion layer water content</a></em>."
     },
     {
-      "date": "Dec 2025",
+      "date": "2024",
+      "type": "talk",
+      "badge_class": "badge-talk",
+      "badge_text": "🎤 Talk",
+      "text": "Presented work on PTFE coverage and gas breakthrough in gas diffusion layers at the 5th annual NSERC CREATE ME² conference."
+    },
+    {
+      "date": "Jan 2024",
+      "type": "paper",
+      "badge_class": "badge-paper",
+      "badge_text": "📄 Paper",
+      "text": "Published in <strong>ChemCatChem</strong>: <em><a href=\"https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cctc.202300668\" target=\"_blank\" rel=\"noopener\">Strong metal-support interactions in ZrO₂-supported IrOx catalyst for efficient oxygen evolution reaction</a></em>."
+    },
+    {
+      "date": "May 2023",
       "type": "award",
       "badge_class": "badge-award",
       "badge_text": "🏆 Award",
-      "text": "TBD"
+      "text": "Awarded a <strong>Mitacs Accelerate Fellowship</strong>."
+    },
+    {
+      "date": "2022",
+      "type": "talk",
+      "badge_class": "badge-talk",
+      "badge_text": "📝 Abstract",
+      "text": "Co-authored an abstract on Ir oxide catalysts on different supports at the 242nd ECS Meeting."
+    },
+    {
+      "date": "May 2022",
+      "type": "award",
+      "badge_class": "badge-award",
+      "badge_text": "🏆 Award",
+      "text": "Received an <strong>NSERC Undergraduate Student Research Award</strong> to work in the Semagina Lab."
     }
   ]
 }

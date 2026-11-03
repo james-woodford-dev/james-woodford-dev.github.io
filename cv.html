@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="J. Woodford — Curriculum Vitae: education, experience, awards, and skills.">
+  <meta name="description" content="James Woodford — Curriculum Vitae: education, research experience, publications, and skills.">
   <meta name="base-url" content="">
-  <title>CV — J. Woodford</title>
+  <title>CV — James Woodford</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <meta name="theme-color" content="#0f130d">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
 
@@ -23,7 +28,6 @@
       <li><a href="news.html">News</a></li>
       <li><a href="cv.html">CV</a></li>
       <li><a href="hobbies.html">Hobbies</a></li>
-      <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
@@ -35,7 +39,7 @@
 </nav>
 
 <!-- Page Hero -->
-<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+<section class="page-hero">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
     <div>
       <h1 style="color:#fff;margin-bottom:.5rem;">
@@ -46,9 +50,6 @@
       </p>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="assets/JWoodford_CV.pdf" download class="btn btn-primary btn-print">
-        <i class="fas fa-download"></i> Download PDF
-      </a>
       <button onclick="window.print()" class="btn btn-outline" style="border-color:rgba(255,255,255,.4);color:#fff;" aria-label="Print CV">
         <i class="fas fa-print"></i> Print
       </button>
@@ -60,7 +61,7 @@
   <div class="container">
     <div class="cv-grid">
 
-      <!-- Left column: timeline sections -->
+      <!-- Left column -->
       <div>
 
         <!-- Education -->
@@ -71,48 +72,59 @@
           </div>
           <ul class="timeline">
             <li class="timeline-item">
-              <div class="timeline-period">2025 – Present</div>
-              <div class="timeline-title">Ph.D. in [Your Field]</div>
-              <div class="timeline-place">[Your University], [City, State]</div>
+              <div class="timeline-period">Sep 2026 – Present</div>
+              <div class="timeline-title">Ph.D., Mechanical Engineering</div>
+              <div class="timeline-place">University of Alberta, Edmonton, AB</div>
               <div class="timeline-desc">
-                Advisor: Prof. [Advisor Name]. 
-                Focus: [brief focus area].
-                GPA: [X.X / 4.0]
+                Focus: scalable numerical methods for electrochemical energy systems.
               </div>
             </li>
             <li class="timeline-item">
-              <div class="timeline-period">2021 – 2025</div>
-              <div class="timeline-title">B.S. / B.A. in [Your Undergrad Field]</div>
-              <div class="timeline-place">[Undergraduate University], [City, State]</div>
+              <div class="timeline-period">2022 – 2026</div>
+              <div class="timeline-title">M.Sc., Mechanical Engineering</div>
+              <div class="timeline-place">University of Alberta, Edmonton, AB</div>
               <div class="timeline-desc">
-                GPA: [X.X / 4.0] &nbsp;·&nbsp; Honors: [Magna Cum Laude / etc.]<br>
-                Thesis: <em>[Thesis Title]</em>
+                Energy Systems Design Laboratory. Image-based modeling of PEM fuel cell porous layers.
               </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">Jun 2022</div>
+              <div class="timeline-title">B.Sc., Chemical Engineering</div>
+              <div class="timeline-place">University of Alberta, Edmonton, AB</div>
             </li>
           </ul>
         </div>
 
-        <!-- Experience -->
+        <!-- Research Experience -->
         <div style="margin-bottom:3rem;">
           <div class="cv-section-header">
-            <span class="icon"><i class="fas fa-briefcase"></i></span>
+            <span class="icon"><i class="fas fa-flask"></i></span>
             <h2>Research Experience</h2>
           </div>
           <ul class="timeline">
             <li class="timeline-item">
-              <div class="timeline-period">Summer 2024</div>
-              <div class="timeline-title">Research Intern</div>
-              <div class="timeline-place">[Lab / Company], [City, State]</div>
+              <div class="timeline-period">Sep 2022 – Present</div>
+              <div class="timeline-title">Graduate Research Assistant</div>
+              <div class="timeline-place">Energy Systems Design Laboratory, University of Alberta</div>
               <div class="timeline-desc">
-                Brief description of the internship project and outcomes.
+                <ul style="list-style:disc;padding-left:1.1rem;margin:0;">
+                  <li>Extended microscale electrochemical reaction FEM solvers (C++) in the OpenFCST project.</li>
+                  <li>Built an automation framework integrating image processing, microstructural analysis, and transport simulation across local and cluster compute resources.</li>
+                  <li>Developed a workflow to characterize porous carbon media with FIB-SEM tomography.</li>
+                  <li>Modernized OpenFCST's Python analysis tools: refactoring, dependency management, multiprocessing/GPU acceleration, and CI pipeline testing.</li>
+                </ul>
               </div>
             </li>
             <li class="timeline-item">
-              <div class="timeline-period">2023 – 2024</div>
-              <div class="timeline-title">Undergraduate Research Assistant</div>
-              <div class="timeline-place">[Lab Name], [University]</div>
+              <div class="timeline-period">May 2022 – Sep 2022</div>
+              <div class="timeline-title">Undergraduate Research Intern (NSERC USRA)</div>
+              <div class="timeline-place">Semagina Lab, University of Alberta</div>
               <div class="timeline-desc">
-                Brief description of your role and contributions.
+                <ul style="list-style:disc;padding-left:1.1rem;margin:0;">
+                  <li>Investigated the link between support conductivity and catalyst activity for the oxygen evolution reaction.</li>
+                  <li>Synthesized metal-oxide-supported Ir catalysts by incipient wetness; tested activity on a rotating disk electrode.</li>
+                  <li>Characterized catalysts with SEM-EDX and XRD.</li>
+                </ul>
               </div>
             </li>
           </ul>
@@ -126,41 +138,103 @@
           </div>
           <ul class="timeline">
             <li class="timeline-item">
-              <div class="timeline-period">Spring 2026</div>
-              <div class="timeline-title">Teaching Assistant — [Course Name]</div>
-              <div class="timeline-place">[University]</div>
+              <div class="timeline-period">Four terms</div>
+              <div class="timeline-title">Lab Instructor / TA: MEC E 563, Finite Element Method</div>
+              <div class="timeline-place">Department of Mechanical Engineering, University of Alberta</div>
               <div class="timeline-desc">
-                Responsibilities: office hours, grading, recitation sections.
+                Led undergraduate labs on ANSYS Mechanical simulation setup, interpretation of results,
+                and report writing; refined lab materials based on student feedback.
               </div>
             </li>
           </ul>
         </div>
 
-        <!-- Publications (summary) -->
-        <div>
+        <!-- Publications -->
+        <div style="margin-bottom:3rem;">
           <div class="cv-section-header">
             <span class="icon"><i class="fas fa-scroll"></i></span>
             <h2>Publications</h2>
           </div>
           <p style="font-size:.93rem;color:var(--text-muted);margin-bottom:.75rem;">
-            See the full list on the <a href="publications.html">Publications page</a> or
-            <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar">Google Scholar</a>.
+            Also on the <a href="publications.html">Publications page</a> and
+            <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" target="_blank" rel="noopener" data-content-href="scholar">Google Scholar</a>.
           </p>
+
+          <h4 style="margin:1rem 0 .5rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Peer-reviewed</h4>
           <div class="pub-item">
-            <div class="pub-title"><a href="#">[Paper Title 1]</a></div>
-            <div class="pub-authors"><em>J. Woodford</em>, Co-Author A, Co-Author B</div>
-            <div class="pub-venue">[Venue], [Year]</div>
+            <div class="pub-title"><a href="https://pubs.acs.org/doi/abs/10.1021/acsami.4c04641" target="_blank" rel="noopener">Unveiling the role of PTFE surface coverage on controlling gas diffusion layer water content</a></div>
+            <div class="pub-authors">F. Wiesner, <strong>J. Woodford</strong>, M. Sabharwal, M. Hesselmann, S. Jung, M. Wessling, M. Secanell</div>
+            <div class="pub-venue">ACS Applied Materials &amp; Interfaces, 2024</div>
           </div>
           <div class="pub-item">
-            <div class="pub-title"><a href="#">[Paper Title 2]</a></div>
-            <div class="pub-authors">Co-Author A, <em>J. Woodford</em></div>
-            <div class="pub-venue">[Venue], [Year]</div>
+            <div class="pub-title"><a href="https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cctc.202300668" target="_blank" rel="noopener">Strong metal-support interactions in ZrO<sub>2</sub>-supported IrO<sub>x</sub> catalyst for efficient oxygen evolution reaction</a></div>
+            <div class="pub-authors">H. Dhawan, X. Tan, J. Shen, <strong>J. Woodford</strong>, M. Secanell, N. Semagina</div>
+            <div class="pub-venue">ChemCatChem, 2024</div>
           </div>
+
+          <h4 style="margin:1.5rem 0 .5rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Preprints</h4>
+          <div class="pub-item">
+            <div class="pub-title"><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7624452" target="_blank" rel="noopener">Quantifying causes of voltage loss in anion exchange membrane water electrolysis</a></div>
+            <div class="pub-authors">J. Mouallem, J. Liu, A. Quintero, J. Eitzen, S. Storbakken, <strong>J. Woodford</strong>, M. Secanell</div>
+            <div class="pub-venue">SSRN preprint</div>
+          </div>
+
+          <h4 style="margin:1.5rem 0 .5rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Conference abstracts</h4>
+          <div class="pub-item">
+            <div class="pub-title"><a href="https://ecs.confex.com/ecs/250/meetingapp.cgi/Paper/223228" target="_blank" rel="noopener">Impact of varying ionomer coverage on water intrusion, mass transport, and electrochemical performance in PEMFC catalyst layers via 3D microscale modeling</a></div>
+            <div class="pub-authors"><strong>J. Woodford</strong>, F. Wiesner, L. Padilla, M. Sabharwal, M. Secanell</div>
+            <div class="pub-venue">250th ECS Meeting, 2026</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Multi-scale computational analysis of cathode catalyst layers: from reconstructions to cell level integration (Invited)</div>
+            <div class="pub-authors">M. Secanell, <strong>J. Woodford</strong>, J. Heitz</div>
+            <div class="pub-venue">International Workshop on Fuel Cell MEA, Fraunhofer ISE, 2025</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Impact of PTFE coverage on gas diffusion and breakthrough behavior in gas diffusion layers</div>
+            <div class="pub-authors"><strong>J. Woodford</strong>, F. Wiesner, M. Sabharwal, M. Hesselmann, S. Jung, M. Wessling, M. Secanell</div>
+            <div class="pub-venue">NSERC CREATE ME² 5th Annual Conference, 2024</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title"><a href="https://iopscience.iop.org/article/10.1149/MA2022-02502598mtgabs/meta" target="_blank" rel="noopener">Impact of different supports on the performance of Ir oxide based catalysts synthesized using incipient wetness method</a></div>
+            <div class="pub-authors">H. Dhawan, <strong>J. Woodford</strong>, N. Semagina, M. Secanell</div>
+            <div class="pub-venue">242nd ECS Meeting, 2022</div>
+          </div>
+        </div>
+
+        <!-- Industry Experience -->
+        <div>
+          <div class="cv-section-header">
+            <span class="icon"><i class="fas fa-industry"></i></span>
+            <h2>Industry Experience</h2>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <div class="timeline-period">2020 – 2021</div>
+              <div class="timeline-title">Process Operator</div>
+              <div class="timeline-place">Millar Western Fiber Products, Whitecourt, AB</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">2019</div>
+              <div class="timeline-title">Logistics Technician</div>
+              <div class="timeline-place">Alberta Newsprint Company, Whitecourt, AB</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">2018</div>
+              <div class="timeline-title">Engineering Intern</div>
+              <div class="timeline-place">Millar Western Pulp, Whitecourt, AB</div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-period">2016 – 2017</div>
+              <div class="timeline-title">Process Operator</div>
+              <div class="timeline-place">Double J Big Tank Cleaning, Whitecourt, AB</div>
+            </li>
+          </ul>
         </div>
 
       </div><!-- end left column -->
 
-      <!-- Right column: skills, awards, service -->
+      <!-- Right column -->
       <div>
 
         <!-- Skills -->
@@ -170,36 +244,33 @@
             <h2>Skills</h2>
           </div>
 
-          <h4 style="margin-bottom:.75rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Programming</h4>
-          <ul class="skill-list" style="margin-bottom:1.25rem;">
-            <li class="skill-item">
-              <div class="skill-name"><span>Python</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="90%" style="width:0"></div></div>
-            </li>
-            <li class="skill-item">
-              <div class="skill-name"><span>MATLAB / R</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="75%" style="width:0"></div></div>
-            </li>
-            <li class="skill-item">
-              <div class="skill-name"><span>C / C++</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="55%" style="width:0"></div></div>
-            </li>
-            <li class="skill-item">
-              <div class="skill-name"><span>JavaScript / Web</span></div>
-              <div class="skill-bar"><div class="skill-fill" data-width="60%" style="width:0"></div></div>
-            </li>
-          </ul>
+          <h4 style="margin-bottom:.6rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Programming</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;">
+            <span class="tag">Python (advanced)</span>
+            <span class="tag">C++ (proficient)</span>
+            <span class="tag">CUDA (beginner)</span>
+          </div>
 
-          <h4 style="margin-bottom:.75rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Tools &amp; Frameworks</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:.4rem;">
-            <span class="tag">PyTorch</span>
-            <span class="tag">TensorFlow</span>
-            <span class="tag">NumPy / SciPy</span>
+          <h4 style="margin-bottom:.6rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Numerical &amp; HPC</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.25rem;">
+            <span class="tag">Finite element method</span>
+            <span class="tag">OpenFCST</span>
+            <span class="tag">OpenMP / MPI</span>
+            <span class="tag">CMake</span>
+            <span class="tag">SLURM</span>
+            <span class="tag">Git / CI</span>
+            <span class="tag">ANSYS Mechanical</span>
             <span class="tag">LaTeX</span>
-            <span class="tag">Git / GitHub</span>
-            <span class="tag">Linux / HPC</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Jupyter</span>
+          </div>
+
+          <h4 style="margin-bottom:.6rem;font-size:.92rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Experimental</h4>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem;">
+            <span class="tag">PFIB-SEM tomography</span>
+            <span class="tag">TEM sample prep</span>
+            <span class="tag">Atomic layer deposition</span>
+            <span class="tag">Mercury intrusion porosimetry</span>
+            <span class="tag">Catalyst synthesis</span>
+            <span class="tag">Rotating disk electrode</span>
           </div>
         </div>
 
@@ -207,53 +278,48 @@
         <div style="margin-bottom:2.5rem;">
           <div class="cv-section-header">
             <span class="icon"><i class="fas fa-trophy"></i></span>
-            <h2>Awards &amp; Honors</h2>
+            <h2>Awards &amp; Funding</h2>
           </div>
           <div class="award-item">
-            <span class="award-icon">🏆</span>
+            <span class="award-icon"><i class="fas fa-trophy"></i></span>
             <div>
-              <div style="font-weight:700;font-size:.95rem;">[Award Name]</div>
-              <div style="font-size:.85rem;color:var(--text-muted);">[Organization] · [Year]</div>
+              <div style="font-weight:700;font-size:.95rem;">Mitacs Accelerate Fellowship</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">Mitacs · 2023 – Present · $72,000 CAD</div>
             </div>
           </div>
           <div class="award-item">
-            <span class="award-icon">🎖️</span>
+            <span class="award-icon"><i class="fas fa-award"></i></span>
             <div>
-              <div style="font-weight:700;font-size:.95rem;">[Scholarship / Fellowship]</div>
-              <div style="font-size:.85rem;color:var(--text-muted);">[Organization] · [Year]</div>
-            </div>
-          </div>
-          <div class="award-item">
-            <span class="award-icon">🥇</span>
-            <div>
-              <div style="font-weight:700;font-size:.95rem;">Dean's List</div>
-              <div style="font-size:.85rem;color:var(--text-muted);">[University] · [Years]</div>
+              <div style="font-weight:700;font-size:.95rem;">NSERC Undergraduate Student Research Award</div>
+              <div style="font-size:.85rem;color:var(--text-muted);">NSERC · 2022 · $8,000 CAD</div>
             </div>
           </div>
         </div>
 
-        <!-- Service -->
+        <!-- Certifications -->
         <div style="margin-bottom:2.5rem;">
           <div class="cv-section-header">
-            <span class="icon"><i class="fas fa-hands-helping"></i></span>
-            <h2>Service</h2>
+            <span class="icon"><i class="fas fa-certificate"></i></span>
+            <h2>Certifications</h2>
           </div>
-          <ul style="list-style:disc;padding-left:1.25rem;font-size:.92rem;display:flex;flex-direction:column;gap:.4rem;">
-            <li>Reviewer — [Conference / Journal, Year]</li>
-            <li>Student Volunteer — [Conference, Year]</li>
-            <li>[Other service role]</li>
-          </ul>
+          <p style="font-size:.92rem;">Engineer in Training (EIT), Association of Professional Engineers and Geoscientists of Alberta (APEGA)</p>
         </div>
 
-        <!-- Languages -->
+        <!-- Professional development -->
         <div>
           <div class="cv-section-header">
-            <span class="icon"><i class="fas fa-language"></i></span>
-            <h2>Languages</h2>
+            <span class="icon"><i class="fas fa-chalkboard"></i></span>
+            <h2>Training</h2>
           </div>
-          <ul style="list-style:none;padding:0;font-size:.92rem;display:flex;flex-direction:column;gap:.4rem;">
-            <li>🇺🇸 English — Native</li>
-            <li>🇪🇸 [Language 2] — [Level]</li>
+          <ul style="list-style:disc;padding-left:1.25rem;font-size:.9rem;display:flex;flex-direction:column;gap:.35rem;">
+            <li>PyTorch on HPC clusters (SHARCNET), 2025</li>
+            <li>C++ with mdspan, linear algebra, and std::execution (SHARCNET), 2025</li>
+            <li>MPI for distributed computing (SHARCNET), 2024</li>
+            <li>Introduction to CMake (SHARCNET), 2024</li>
+            <li>Python for high performance computing (SHARCNET), 2023</li>
+            <li>Creating and distributing Python packages (SHARCNET), 2022</li>
+            <li>Rigor and reproducibility in catalysis research (NSF-DOE), 2022</li>
+            <li>Self-paced (SHARCNET): GPU programming, GPU efficiency, supercomputing, machine learning, Bash</li>
           </ul>
         </div>
 
@@ -271,20 +337,19 @@
         <li><a href="research.html">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="blog/">Blog</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/james-woodford-2b468316a" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:james.woodford@ualberta.ca" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+    <p class="footer-copy">&copy; <span id="year"></span> James Woodford</p>
   </div>
 </footer>
 
-<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:var(--on-accent);border:none;border-radius:var(--radius);width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
   <i class="fas fa-arrow-up"></i>
 </button>
 

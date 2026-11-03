@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="J. Woodford — Hobbies, interests, and life outside the lab.">
+  <meta name="description" content="James Woodford — running, photography, reading, and art outside the lab.">
   <meta name="base-url" content="">
-  <title>Hobbies — J. Woodford</title>
+  <title>Hobbies — James Woodford</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <meta name="theme-color" content="#0f130d">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
 
@@ -23,7 +28,6 @@
       <li><a href="news.html">News</a></li>
       <li><a href="cv.html">CV</a></li>
       <li><a href="hobbies.html">Hobbies</a></li>
-      <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
@@ -35,13 +39,13 @@
 </nav>
 
 <!-- Page Hero -->
-<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+<section class="page-hero">
   <div class="container">
     <h1 style="color:#fff;margin-bottom:.5rem;">
       <i class="fas fa-smile" style="margin-right:.6rem;opacity:.8"></i>Hobbies &amp; Interests
     </h1>
     <p style="color:rgba(255,255,255,.75);max-width:620px;">
-      Life beyond the lab — things I enjoy, explore, and find meaningful outside of research.
+      Life outside the lab.
     </p>
   </div>
 </section>
@@ -49,95 +53,47 @@
 <section class="section">
   <div class="container">
     <p style="font-size:1.05rem;max-width:700px;margin-bottom:3rem;color:var(--text-muted);">
-      I believe a well-rounded life makes for a better researcher. Here are some of the things 
-      that keep me curious, active, and grounded outside of work.
+      What I get up to when I'm not waiting on a simulation to converge.
     </p>
 
     <div class="hobby-grid">
 
       <div class="hobby-card">
-        <div class="hobby-emoji">🥾</div>
-        <div class="hobby-title">Hiking &amp; Outdoors</div>
+        <div class="hobby-emoji"><i class="fas fa-person-running"></i></div>
+        <div class="hobby-title">Running</div>
         <div class="hobby-desc">
-          I love getting out into nature — whether it's a short trail near campus or a multi-day 
-          backcountry adventure. Some of my best ideas happen on the trail.
+          Running is how I clear my head. A lot of debugging gets done somewhere around
+          the middle of a run.
         </div>
       </div>
 
       <div class="hobby-card">
-        <div class="hobby-emoji">📚</div>
-        <div class="hobby-title">Reading</div>
-        <div class="hobby-desc">
-          Anything from science fiction and speculative fiction to popular science and history. 
-          I keep a reading list and am always happy to swap recommendations.
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">🎸</div>
-        <div class="hobby-title">Music</div>
-        <div class="hobby-desc">
-          I play [instrument] and enjoy everything from [genre] to [genre]. Music is my 
-          go-to way to decompress after a long day in the lab.
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">🧗</div>
-        <div class="hobby-title">Rock Climbing</div>
-        <div class="hobby-desc">
-          Bouldering and sport climbing — the problem-solving aspect maps surprisingly well 
-          to research. I climb at the local gym a few times a week.
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">🍳</div>
-        <div class="hobby-title">Cooking</div>
-        <div class="hobby-desc">
-          Cooking is part science, part art. I enjoy experimenting with new cuisines and 
-          perfecting old favorites. Ask me about my best recipe!
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">🎲</div>
-        <div class="hobby-title">Board Games &amp; Puzzles</div>
-        <div class="hobby-desc">
-          Strategy games, cooperative games, and good old puzzles. Great for 
-          keeping the brain sharp and spending quality time with friends.
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">✈️</div>
-        <div class="hobby-title">Travel</div>
-        <div class="hobby-desc">
-          Conferences take me to interesting places, but I try to extend each trip to explore 
-          the local culture, food, and history.
-        </div>
-      </div>
-
-      <div class="hobby-card">
-        <div class="hobby-emoji">📷</div>
+        <div class="hobby-emoji"><i class="fas fa-camera"></i></div>
         <div class="hobby-title">Photography</div>
         <div class="hobby-desc">
-          Amateur landscape and street photographer. I document my travels and hikes — 
-          it helps me slow down and notice details I'd otherwise rush past.
+          It's not that far from microscopy: framing, lighting, and finding the interesting
+          structure in a scene. A good excuse to slow down and notice details.
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-emoji"><i class="fas fa-book-open"></i></div>
+        <div class="hobby-title">Reading</div>
+        <div class="hobby-desc">
+          I always have a book on the go, and I'm always happy to trade recommendations.
+        </div>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-emoji"><i class="fas fa-spray-can"></i></div>
+        <div class="hobby-title">Graffiti-style art <span class="hobby-tag">new</span></div>
+        <div class="hobby-desc">
+          A recent interest: bold lettering, colour, and composition. I'm still very much
+          a beginner and enjoying learning the craft.
         </div>
       </div>
 
     </div>
-  </div>
-</section>
-
-<!-- Quote section -->
-<section class="section section-alt">
-  <div class="container" style="max-width:700px;text-align:center;">
-    <blockquote style="font-size:1.3rem;font-style:italic;color:var(--text-muted);border:none;padding:0;background:none;margin:0 auto;line-height:1.6;">
-      "The more I learn, the more I realize how much I don't know."
-    </blockquote>
-    <p style="margin-top:.75rem;font-size:.9rem;color:var(--text-light);">— Albert Einstein</p>
   </div>
 </section>
 
@@ -149,20 +105,19 @@
         <li><a href="research.html">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="blog/">Blog</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/james-woodford-2b468316a" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:james.woodford@ualberta.ca" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+    <p class="footer-copy">&copy; <span id="year"></span> James Woodford</p>
   </div>
 </footer>
 
-<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:var(--on-accent);border:none;border-radius:var(--radius);width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
   <i class="fas fa-arrow-up"></i>
 </button>
 

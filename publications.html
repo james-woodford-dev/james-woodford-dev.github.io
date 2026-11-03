@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="J. Woodford — Publications, citation metrics, and research output pulled from Google Scholar.">
   <meta name="base-url" content="">
-  <title>Publications — J. Woodford</title>
+  <title>Publications — James Woodford</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <meta name="theme-color" content="#0f130d">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uu0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script>try{var t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
 
@@ -23,7 +28,6 @@
       <li><a href="news.html">News</a></li>
       <li><a href="cv.html">CV</a></li>
       <li><a href="hobbies.html">Hobbies</a></li>
-      <li><a href="blog/">Blog</a></li>
     </ul>
     <div class="nav-actions">
       <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
@@ -35,14 +39,14 @@
 </nav>
 
 <!-- Page Hero -->
-<section style="background:linear-gradient(135deg,var(--primary) 0%,#1a4a80 100%);color:#fff;padding:3rem 0;">
+<section class="page-hero">
   <div class="container">
     <h1 style="color:#fff;margin-bottom:.5rem;">
       <i class="fas fa-scroll" style="margin-right:.6rem;opacity:.8"></i>Publications
     </h1>
     <p style="color:rgba(255,255,255,.75);max-width:620px;">
       My full publication record, automatically synced with 
-      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" 
+      <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" 
          target="_blank" rel="noopener" data-content-href="scholar" style="color:rgba(255,255,255,.9);">Google Scholar</a> 
       once a month.
     </p>
@@ -79,7 +83,7 @@
   <div class="container">
     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;">
       <h2 class="section-title" style="margin-bottom:0;">All Publications</h2>
-      <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" 
+      <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" 
          target="_blank" rel="noopener" data-content-href="scholar" class="btn btn-outline btn-sm">
         <i class="fas fa-graduation-cap"></i> View on Google Scholar
       </a>
@@ -113,20 +117,19 @@
         <li><a href="research.html">Research</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="cv.html">CV</a></li>
-        <li><a href="blog/">Blog</a></li>
       </ul>
       <div class="footer-social">
         <a href="https://github.com/james-woodford-dev" target="_blank" rel="noopener" data-content-href="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="mailto:your.email@university.edu" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/james-woodford-2b468316a" target="_blank" rel="noopener" data-content-href="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://scholar.google.com/citations?user=lofMBZ4AAAAJ" target="_blank" rel="noopener" data-content-href="scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="mailto:james.woodford@ualberta.ca" data-content-href="email" aria-label="Email"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
-    <p class="footer-copy">&copy; <span id="year"></span> J. Woodford</p>
+    <p class="footer-copy">&copy; <span id="year"></span> James Woodford</p>
   </div>
 </footer>
 
-<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:#fff;border:none;border-radius:50%;width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
+<button id="scroll-top" aria-label="Scroll to top" style="position:fixed;bottom:2rem;right:2rem;background:var(--accent);color:var(--on-accent);border:none;border-radius:var(--radius);width:42px;height:42px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);">
   <i class="fas fa-arrow-up"></i>
 </button>
 
