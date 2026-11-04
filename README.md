@@ -1,6 +1,6 @@
 # james-woodford-dev.github.io
 
-James Woodford's personal website hosted hosted by GitHub Pages.
+James Woodford's personal website hosted by GitHub Pages.
 
 ---
 
@@ -30,7 +30,7 @@ After saving `data/content.json`, commit and push — GitHub Pages will redeploy
 
 ## Editing individual pages
 
-For content that is more structured (CV timeline, research themes, hobby cards, blog posts),
+For content that is more structured (CV timeline, research themes, hobby cards),
 edit the corresponding HTML file directly:
 
 | File | Page |
@@ -41,25 +41,33 @@ edit the corresponding HTML file directly:
 | `news.html` | Full news list |
 | `cv.html` | Curriculum Vitae |
 | `hobbies.html` | Hobbies |
-| `blog/index.html` | Blog listing |
-| `blog/posts/` | Individual blog posts |
 
 ---
 
 ## Publications (Google Scholar sync)
 
-Publication data is fetched automatically once a month via GitHub Actions
-(see `.github/workflows/update-scholar.yml`).
+`scripts/update_scholar.py` pulls your profile, citation metrics and publication list from
+Google Scholar into `data/scholar.json`, which `publications.html` renders.
 
-To enable it:
-1. Add your Google Scholar ID to `data/content.json` under `scholar_id`.
-2. Add `SCHOLAR_ID` as a repository secret in **Settings → Secrets → Actions**.
-3. Trigger a manual run from the **Actions** tab, or wait for the monthly schedule.
+It runs automatically on the 1st of every month via GitHub Actions
+(`.github/workflows/update-scholar.yml`) and commits any changes. You can also:
+
+- **Run it from GitHub:** Actions tab → *Update Google Scholar Data* → *Run workflow*.
+- **Run it locally:**
+  ```bash
+  pip install -r requirements.txt
+  python scripts/update_scholar.py
+  ```
+
+The Scholar ID is set in `scripts/update_scholar.py` (`DEFAULT_SCHOLAR_ID`). No secrets are needed.
+
+> **Note:** GitHub disables scheduled workflows after 60 days without repository activity.
+> If the monthly run stops, re-enable it from the Actions tab.
+> Google Scholar also sometimes rate-limits GitHub's servers; if a run fails for that reason,
+> the existing data is kept, and running the script locally is the fallback.
 
 ---
 
 ## Adding a profile photo
 
-Place a photo at `assets/img/profile.jpg` (or `.png`).
-The site will use it automatically; if the file is missing it falls back to the
-placeholder SVG.
+The homepage photo is `assets/img/picture.JPG`.

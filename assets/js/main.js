@@ -121,14 +121,16 @@
         a.href = 'https://github.com/' + c.github_username;
       });
     }
+    // Accept either a full URL or just the slug / ID
+    const asUrl = (val, prefix) => /^https?:\/\//.test(val) ? val : prefix + val;
     if (c.linkedin_profile) {
       document.querySelectorAll('[data-content-href="linkedin"]').forEach(a => {
-        a.href = 'https://www.linkedin.com/in/' + c.linkedin_profile;
+        a.href = asUrl(c.linkedin_profile, 'https://www.linkedin.com/in/');
       });
     }
     if (c.scholar_id) {
       document.querySelectorAll('[data-content-href="scholar"]').forEach(a => {
-        a.href = 'https://scholar.google.com/citations?user=' + c.scholar_id;
+        a.href = asUrl(c.scholar_id, 'https://scholar.google.com/citations?user=');
       });
     }
     if (c.email) {
@@ -156,7 +158,7 @@
       const delayClasses = ['fade-in', 'fade-in fade-in-delay-1', 'fade-in fade-in-delay-2'];
       grid.innerHTML = c.research_interests.map((item, i) => `
         <div class="card ${delayClasses[i] || 'fade-in'}">
-          <div class="card-icon">${item.icon || ''}</div>
+          <div class="card-icon">${/^fa-/.test(item.icon || '') ? `<i class="fas ${item.icon}"></i>` : (item.icon || '')}</div>
           <h3 class="card-title">${item.title || ''}</h3>
           <p class="text-muted" style="font-size:0.93rem">${item.description || ''}</p>
         </div>`).join('');
@@ -220,6 +222,49 @@
       .replace(/"/g, '&quot;');
   }
 
+  // Scholar lists authors as "A and B and C"; show "A, B, C" with my name in bold
+  const MY_NAME = /\b(James Woodford|J\. Woodford)\b/;
+
+  function pubHtml(pub) {
+    const title   = escHtml(pub.title || 'Untitled');
+    const authors = escHtml((pub.authors || '').split(' and ').join(', '))
+      .replace(MY_NAME, '<strong>$1</strong>');
+    const venue   = escHtml(pub.venue || '');
+    const year    = escHtml(String(pub.year || ''));
+    const cites   = pub.citations || 0;
+    const url     = pub.url ? escHtml(pub.url) : '';
+
+    return `
+      <div class="pub-item">
+        <div class="pub-title">
+          ${url ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>` : title}
+        </div>
+        <div class="pub-authors">${authors}</div>
+        ${venue ? `<div class="pub-venue">${venue}${year ? ', ' + year : ''}</div>` : (year ? `<div class="pub-venue">${year}</div>` : '')}
+        <div class="pub-tags">
+          ${cites > 0 ? `<span class="tag tag-cite">📖 ${cites} citation${cites !== 1 ? 's' : ''}</span>` : ''}
+          ${url ? `<a href="${url}" target="_blank" rel="noopener" class="tag">🔗 View</a>` : ''}
+        </div>
+      </div>`;
+  }
+
+  // Homepage: show the three most-cited publications
+  async function loadHomePubs() {
+    const el = document.getElementById('home-pubs');
+    if (!el) return;
+    try {
+      const base = document.querySelector('meta[name="base-url"]')?.content ?? '';
+      const res  = await fetch(base + 'data/scholar.json');
+      if (!res.ok) throw new Error();
+      const pubs = ((await res.json()).publications || [])
+        .slice().sort((a, b) => (b.citations || 0) - (a.citations || 0)).slice(0, 3);
+      el.innerHTML = pubs.map(pubHtml).join('');
+    } catch (_) {
+      el.innerHTML = '<p class="text-muted">See the <a href="publications.html">Publications page</a>.</p>';
+    }
+  }
+  loadHomePubs();
+
   function renderScholarData(data, container, statsEl) {
     // Stats
     if (statsEl && data.profile) {
@@ -238,29 +283,7 @@
       return;
     }
 
-    const html = pubs.map((pub, i) => {
-      const title   = escHtml(pub.title   || 'Untitled');
-      const authors = escHtml(pub.authors || '');
-      const venue   = escHtml(pub.venue   || '');
-      const year    = escHtml(String(pub.year || ''));
-      const cites   = pub.citations || 0;
-      const url     = pub.url ? escHtml(pub.url) : '';
-
-      return `
-      <div class="pub-item">
-        <div class="pub-title">
-          ${url ? `<a href="${url}" target="_blank" rel="noopener">${title}</a>` : title}
-        </div>
-        <div class="pub-authors">${authors}</div>
-        ${venue ? `<div class="pub-venue">${venue}${year ? ', ' + year : ''}</div>` : (year ? `<div class="pub-venue">${year}</div>` : '')}
-        <div class="pub-tags">
-          ${cites > 0 ? `<span class="tag tag-cite">📖 ${cites} citation${cites !== 1 ? 's' : ''}</span>` : ''}
-          ${url ? `<a href="${url}" target="_blank" rel="noopener" class="tag">🔗 View</a>` : ''}
-        </div>
-      </div>`;
-    }).join('');
-
-    container.innerHTML = html;
+    container.innerHTML = pubs.map(pubHtml).join('');
 
     // Update "last updated" text
     const lastUpdated = document.getElementById('last-updated');

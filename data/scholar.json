@@ -1,12 +1,12 @@
 {
-  "last_updated": "2026-03-13",
+  "last_updated": "2026-11-03",
   "profile": {
     "name": "James Woodford",
-    "affiliation": "M.Sc Mechanical Engineering Student, University of Alberta",
-    "email": "",
+    "affiliation": "Ph.D Mechanical Engineering Student, University of Alberta",
+    "email": "@ualberta.ca",
     "interests": [],
-    "citations": 18,
-    "citations_5y": 18,
+    "citations": 27,
+    "citations_5y": 27,
     "h_index": 2,
     "h_index_5y": 2,
     "i10_index": 1,
@@ -15,31 +15,49 @@
   },
   "publications": [
     {
+      "title": "Impact of Varying Ionomer Coverage on Water Intrusion, Mass Transport, and Electrochemical Performance In PEMFC Catalyst Layers Via 3D Microscale Modeling",
+      "authors": "James Woodford and Florian Wiesner and Luis Padilla and Mayank Sabharwal and Marc Secanell",
+      "venue": "250th ECS Meeting (October 25-29, 2026)",
+      "year": 2026,
+      "abstract": "",
+      "citations": 0,
+      "url": "https://ecs.confex.com/ecs/250/meetingapp.cgi/Paper/223228"
+    },
+    {
       "title": "Unveiling the role of PTFE surface coverage on controlling gas diffusion layer water content",
       "authors": "Florian Wiesner and James Woodford and Mayank Sabharwal and Matthias Hesselmann and Seongyeop Jung and Matthias Wessling and Marc Secanell",
-      "venue": "",
+      "venue": "ACS Applied Materials & Interfaces",
       "year": 2024,
       "abstract": "Gas diffusion layers (GDLs) are usually coated with a hydrophobic agent to achieve a delicate balance between liquid and gas phases to maximize mass transport. Yet, most GDL numerical models to date have assumed an average contact angle for all materials, thereby eliminating the possibility of studying the role of the polytetrafluoroethylene (PTFE) content. This study introduces two mixed wettability algorithms to predict the mixed wetting behavior of GDLs composed of multiple materials. The algorithms employ contact angle and distance to solid materials to determine the critical capillary pressure for each pore voxel. The application of the algorithms to the estimation of capillary pressure vs saturation curves for two GDLs, namely, a micro-computed tomography (μ-CT) reconstructed SGL 39BA GDL and a stochastically reconstructed Toray 120C GDL, showed that, in agreement with experimental data, the …",
-      "citations": 11,
+      "citations": 18,
       "url": "https://pubs.acs.org/doi/abs/10.1021/acsami.4c04641"
     },
     {
       "title": "Strong Metal‐Support Interactions in ZrO2‐Supported IrOx Catalyst for Efficient Oxygen Evolution Reaction",
       "authors": "Himanshi Dhawan and Xuehai Tan and Jing Shen and James Woodford and Marc Secanell and Natalia Semagina",
-      "venue": "",
+      "venue": "ChemCatChem",
       "year": 2024,
       "abstract": "The use of ZrO2 as a support material for IrOx‐based catalysts in oxygen evolution reaction (OER) electrocatalysis was studied using ex‐situ characterization and rotating disk electrode electrochemical testing of supported IrxZr(1‐x)O2 on ZrO2 of varying sizes. The catalyst exhibited high OER mass (specific) activity (712 A ) and intrinsic activity (4.8 mA ) at 1.6 VRHE, attributed to IrxZr(1‐x)O2 alloy formation, an interconnected network of Irx Zr(1‐x)O2 nanoparticles and the presence of Ir(III)/Ir(IV) species throughout the bulk. It also appears to be resistant to Ir dissolution; however, accumulation of O2 bubbles in the catalyst microstructure and minor phase transformation of Ir(III)/Ir(IV) species during OER cause deactivation. Temperature‐programmed desorption indicated a possible link between the observed high activity and higher amounts of adsorbed H2O and desorbed O2 species.",
-      "citations": 6,
+      "citations": 8,
       "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/abs/10.1002/cctc.202300668"
     },
     {
       "title": "Impact of Different Supports on the Performance of Ir Oxide Based Catalysts Synthesized Using Incipient Wetness Method",
       "authors": "Himanshi Dhawan and James Woodford and Natalia Semagina and Marc Secanell",
-      "venue": "",
+      "venue": "Electrochemical Society Meeting Abstracts 242",
       "year": 2022,
       "abstract": "   Development of an active and durable catalyst for oxygen evolution reaction (OER) is a pivotal part of designing an efficient PEM water electrolyser. Iridium is one of the best available catalysts because of its corrosion resistance and activity [1]. Use of Ir is however, limited by its scarcity, limited durability and high cost. Its deposition on a support is a popular way to improve the available surface area, activity and stability [2]. For applications in acidic water electrolysis, supports with the highest chemical resistance and conductivity are preferred. While different methods have been studied to impregnate a support with catalyst nanoparticles, such as Adams’s fusion method and polyol method, their scalability remains questionable due to intensive resource requirements. In this work, Ir oxide based supported catalysts have been synthesized using the incipient wetness method (IWM), one of the most commonly used …",
       "citations": 1,
       "url": "https://iopscience.iop.org/article/10.1149/MA2022-02502598mtgabs/meta"
+    },
+    {
+      "title": "Quantifying causes of voltage loss in anion exchange membrane water electrolysis",
+      "authors": "Jake Mouallem and Jiafei Liu and Andrea Quintero and Jasper Eitzen and Scott Storbakken and James Woodford and Marc Secanell",
+      "venue": "Available at SSRN 7624452",
+      "year": "",
+      "abstract": "Anion exchange membrane water electrolyzers (AEMWE) are usually fed with a liquid electrolyte to increase ion conductivity and active surface area. As a result, porous transport layers (PTLs) become electrochemically active and co-ions can be transferred across the AEM. These processes, however, are not considered in state-of-the-art numerical models. In this work, a multi-dimensional AEMWE model is developed that considers reaction in all components of the cell and uses a non-ideal Nernst-Planck-Poisson framework to account for ion transport. Three AEMWE configurations, ie cells with both anode and cathode catalyst layers (CL), only cathode CL, and without CLs, featuring an embedded reference electrode are experimentally and numerically studied to analyze the CL and PTL overpotential and current density contributions. Using a combination of experiment and simulations, we show the PTL can contribute up to 17% of the anode current and that co-ions decrease ohmic losses by allowing concentration gradients within the membrane. Furthermore, we provide a detailed voltage loss breakdown highlighting the increase in ion exchange losses when CLs are removed. Using the detailed breakdown, a cathode Pt loading of 0.4 mg/cm^ 2 is shown to achieve the lowest combined capital and operating costs at an operating current density of 1 A/cm^ 2. Finally, by observation of land-to-channel (2D) effects on ion concentrations and reaction distributions, the need for advanced multi-dimensional models is highlighted.",
+      "citations": 0,
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7624452"
     }
   ]
 }

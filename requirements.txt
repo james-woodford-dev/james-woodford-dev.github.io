@@ -1,2 +1,3 @@
-scholarly
-requests
+scholarly>=1.7.11
+# scholarly imports bibtexparser.bibdatabase, which was removed in bibtexparser 2.x
+bibtexparser<2

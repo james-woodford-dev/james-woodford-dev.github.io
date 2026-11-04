@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       scholar_id:
-        description: 'Override Google Scholar profile ID (leave blank to use repository secret)'
+        description: 'Override Google Scholar profile ID (leave blank to use the default in scripts/update_scholar.py)'
         required: false
         type: string
 
@@ -26,17 +26,16 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
           cache: 'pip'
 
       - name: Install dependencies
-        run: pip install scholarly
+        run: pip install -r requirements.txt
 
       - name: Fetch Scholar data
-        # env:
-          # Use the manually provided ID if given, otherwise fall back to the repo secret.
-          # To configure: Settings → Secrets and variables → Actions → SCHOLAR_ID
-          # SCHOLAR_ID: ${{ inputs.scholar_id || secrets.SCHOLAR_ID }}
+        env:
+          # Empty unless provided on a manual run; the script then uses its default ID.
+          SCHOLAR_ID: ${{ inputs.scholar_id }}
         run: python scripts/update_scholar.py
 
       - name: Commit updated data
