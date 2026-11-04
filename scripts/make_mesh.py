@@ -56,13 +56,14 @@ for s in tri.simplices:
 
 edge_d = "".join("M{:.0f} {:.0f}L{:.0f} {:.0f}".format(*pts[a], *pts[b]) for a, b in edges)
 out = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMid slice">']
+VIRIDIS = ["#440154", "#443a83", "#31688e", "#21918c", "#35b779", "#8fd744", "#fde725"]
 for i, g in enumerate(groups):
     if not g: continue
-    op = 0.02 + 0.30 * (i / (bins - 1)) ** 1.6
-    out.append(f'<path fill="#8FA548" fill-opacity="{op:.3f}" d="{"".join(g)}"/>')
-out.append(f'<path fill="none" stroke="#B5C77A" stroke-opacity=".22" stroke-width="1" d="{edge_d}"/>')
+    op = 0.06 + 0.34 * (i / (bins - 1)) ** 1.4
+    out.append(f'<path fill="{VIRIDIS[i]}" fill-opacity="{op:.3f}" d="{"".join(g)}"/>')
+out.append(f'<path fill="none" stroke="#35b779" stroke-opacity=".2" stroke-width="1" d="{edge_d}"/>')
 dots = "".join(f'M{x:.0f} {y:.0f}h0' for x, y in pts)
-out.append(f'<path stroke="#D9C9A0" stroke-opacity=".45" stroke-width="2.6" stroke-linecap="round" d="{dots}"/>')
+out.append(f'<path stroke="#fde725" stroke-opacity=".4" stroke-width="2.6" stroke-linecap="round" d="{dots}"/>')
 out.append('</svg>')
 open(sys.argv[1], 'w').write("".join(out))
 print(len(pts), "nodes,", len(tri.simplices), "elements")
